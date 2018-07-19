@@ -21,6 +21,17 @@ class Product {
       }
     )
   }
+  getBreadcrumb(data){
+    let cat = [];
+
+    data.map((result)=>{
+      cat.push(result.name);
+    })
+
+    return cat
+    console.log(cat,123)
+  }
+
   getProduct(info) {
     // console.log(info)
     // console.log(info.thumbnail)

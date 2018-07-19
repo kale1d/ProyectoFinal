@@ -11,15 +11,18 @@ class ListProduct extends Component {
     }
   }
   render(){
-    console.log(this.props.info.map((num,i) => {
-
-    }))
+    //console.log(this.props.info, 123)
     return(
       <div>
       <div>probando</div>
       <div>{this.props.info.map((info,i) => {
         return (
-          <p key={i}>{info.id}</p>
+          <div key={i}>
+            <p>precio:{info.price.amount}</p>
+            <p> titulo: {info.title}</p>
+              <img src={info.picture}/>
+
+          </div>
         )
       })}</div>
 

@@ -11,19 +11,29 @@ class Query {
     }
 
     if (filter.length == 0) {
-      info.available_filters.map((result) => {
-        return result.values.map ((val)=> {
-          if (val.results > maxObj.results) {
-            maxObj = {
-              name: val.name,
-              results: val.results
-            }
+      const results = info.available_filters[0];
+      results.values.map((val)=>{
+        if(val.results>maxObj.results) {
+          maxObj = {
+            name: val.name,
+            results: val.results,
           }
-        })
+        }
       })
+
+      // info.available_filters.map((result) => {
+      //   return result.values.map ((val)=> {
+      //     if (val.results > maxObj.results) {
+      //       maxObj = {
+      //         name: val.name,
+      //         results: val.results
+      //       }
+      //     }
+      //   })
+      // })
       // console.log(maxObj.name, 'holaaa')
       this.categories.push(maxObj.name);
-
+      console.log(this.categories);
     }
     else {
       info.filters.map((result)=>{
