@@ -36,14 +36,22 @@ class Query {
       console.log(this.categories);
     }
     else {
-      info.filters.map((result)=>{
-        return result.values.map((val)=>{
-          return val.path_from_root.map((cat)=>{
-            this.categories.push(cat.name);
-            return cat.name;
+      if(info.filters.length !== 0){
+        info.filters.map((result)=>{
+          return result.values.map((val)=>{
+            console.log(val)
+            if(val.path_from_root) {
+              return val.path_from_root.map((cat)=>{
+                this.categories.push(cat.name);
+                return cat.name;
+              });
+            } else {
+              return val.name
+            }
+
           });
         });
-      });
+      }
     }
     this.items = [];
     for (var i = 0; i < 4; i++) {

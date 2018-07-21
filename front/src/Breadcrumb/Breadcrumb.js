@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Breadcrumb.css'
 import Navbar from '../Navbar/Navbar';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -13,17 +14,13 @@ class Breadcrumb extends Component {
     console.log(this.props)
     return(
       <div>
-        <div>chauchis</div>
-          <div>{this.props.info.map((info,i) => {
+          <ul className="breadcrumb--wrapper">{this.props.info.map((info,i) => {
             return (
-              <div key={i}>
-                <p></p>
-                <p> titulo: {info}</p>
+              <li className="breadcrumb" key={i}>
+              {info} </li>
 
-
-              </div>
             )
-          })}</div>
+          })}</ul>
       </div>
     )
   }

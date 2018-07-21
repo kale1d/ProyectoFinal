@@ -1,0 +1,10 @@
+.breadcrumb--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; }
+  .breadcrumb--wrapper .breadcrumb {
+    list-style-type: none; }
+    .breadcrumb--wrapper .breadcrumb::after {
+      content: '>'; }
+    .breadcrumb--wrapper .breadcrumb:last-of-type::after {
+      content: ''; }

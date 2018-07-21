@@ -17,7 +17,7 @@ self.getItem = async function(req,res,next){
     item: new productModel().getProduct(info),
     categories: new productModel().getBreadcrumb(bread.path_from_root)
   }
-  // console.log(info, 'pepepepe')
+  
  return res.json(info)
 }
 

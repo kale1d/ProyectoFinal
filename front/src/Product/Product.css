@@ -1,0 +1,64 @@
+body {
+  background-color: #F4FAFF;
+  font-family: Montserrat, sans-serif; }
+
+.wrapper {
+  width: 80%;
+  margin: auto; }
+
+.product--section {
+  width: 90%;
+  background-color: #FFF;
+  margin: auto;
+  padding: 32px;
+  box-sizing: border-box; }
+  .product--section .product--info .wrapper {
+    width: 95%;
+    display: flex;
+    justify-content: space-around; }
+    .product--section .product--info .wrapper .img--wrapper {
+      width: 70%;
+      max-width: 680px; }
+      .product--section .product--info .wrapper .img--wrapper .img {
+        width: 100%;
+        height: auto; }
+    .product--section .product--info .wrapper .info--wrapper {
+      width: 30%; }
+      .product--section .product--info .wrapper .info--wrapper .state--info {
+        max-height: 45px;
+        display: flex;
+        color: #999999;
+        font-size: 14px;
+        justify-content: flex-start; }
+      .product--section .product--info .wrapper .info--wrapper .title-text {
+        font-size: 24px;
+        margin: 0;
+        text-align: left; }
+      .product--section .product--info .wrapper .info--wrapper .price-text {
+        font-size: 46px;
+        margin: 32px 0 0 0;
+        text-align: left; }
+        .product--section .product--info .wrapper .info--wrapper .price-text .price-subtext {
+          font-size: 20px;
+          vertical-align: super; }
+      .product--section .product--info .wrapper .info--wrapper .button-wrapper {
+        margin-top: 64px; }
+        .product--section .product--info .wrapper .info--wrapper .button-wrapper .button {
+          background-color: #DB5ABA;
+          border-radius: 4px;
+          color: white;
+          padding: 15px 60px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer; }
+  .product--section .description--info {
+    width: 55%;
+    text-align: left;
+    margin-left: 32px; }
+    .product--section .description--info .wrapper {
+      width: 100%;
+      text-align: left;
+      margin-left: 32px; }

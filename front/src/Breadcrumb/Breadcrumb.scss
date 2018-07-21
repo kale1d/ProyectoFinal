@@ -1,0 +1,17 @@
+.breadcrumb--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  .breadcrumb {
+    list-style-type: none;
+    &::after {
+      content:'>'
+    }
+    &:last-of-type {
+      &::after {
+        content:''
+      }
+    }
+  }
+
+}

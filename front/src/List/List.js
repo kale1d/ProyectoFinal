@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './List.css';
 import Navbar from '../Navbar/Navbar';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ListProduct from '../ListProduct/ListProduct'
@@ -42,15 +43,18 @@ class List extends Component {
   }
 
   render(){
-    console.log(this.state.data.categories)
+    //console.log(this.state.data.categories)
     return(
       <div>
         <Navbar />
         {Object.keys(this.state.data).length > 0 &&
-        <div>
-          <ListProduct info={this.state.data.items} />
+          <section className="list--section">
+        <div className="list--wrapper">
           <Breadcrumb info = {this.state.data.categories} />
+
+          <ListProduct info={this.state.data.items} />
         </div>
+      </section>
         }
 
       </div>

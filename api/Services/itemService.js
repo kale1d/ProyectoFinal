@@ -6,6 +6,7 @@ self.getItem =  function (name){
   const api = new Promise ((resolve, reject)=>{
     rest.get('https://api.mercadolibre.com/items/'+name).on('complete', function(result){
        //console.log(result.results[1].price);
+       // console.log(, result.pictures);
       resolve(result)
     });
   });
