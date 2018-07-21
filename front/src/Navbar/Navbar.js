@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -31,12 +31,10 @@ class Navbar extends Component {
     this.setState({
       search: '',
     })
-    console.log(this.state.search)
   }
 
   handleKeyPress(e){
-    if(e.key=='Enter'){
-      console.log (1234)
+    if(e.key==='Enter'){
       this.setState({
         redirect:true,
       })
@@ -48,22 +46,22 @@ class Navbar extends Component {
     return (
       <nav className="nav--section">
         <div className = "nav--wrapper">
-        <input className="input"
-          type="text"
-          value={this.state.search}
-          onChange={this.handleChange.bind(this)}
-          placeholder = "¿Qué estás buscando?"
-          onKeyPress={this.handleKeyPress.bind(this)}
-          />
-        {this.state.redirect &&
-          <Redirect to={url}>
-          </Redirect>
-        }
-        <div className="search--wrapper" onClick={this.handleClick.bind(this)}>
-          <img className="search--img" src="/img/search.png"></img>
-        </div>
+          <input className="input"
+            type="text"
+            value={this.state.search}
+            onChange={this.handleChange.bind(this)}
+            placeholder = "¿Qué estás buscando?"
+            onKeyPress={this.handleKeyPress.bind(this)}
+            />
+          {this.state.redirect &&
+            <Redirect to={url}>
+            </Redirect>
+          }
+          <div className="search--wrapper" onClick={this.handleClick.bind(this)}>
+            <img className="search--img" src="/img/search.png" alt="serch logo"></img>
+          </div>
 
-      </div>
+        </div>
       </nav>
     );
   }

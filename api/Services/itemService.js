@@ -5,8 +5,6 @@ let rest = require('restler');
 self.getItem =  function (name){
   const api = new Promise ((resolve, reject)=>{
     rest.get('https://api.mercadolibre.com/items/'+name).on('complete', function(result){
-       //console.log(result.results[1].price);
-       // console.log(, result.pictures);
       resolve(result)
     });
   });
@@ -16,7 +14,6 @@ self.getItem =  function (name){
 self.getDescription = function (id) {
   const api = new Promise ((resolve, reject)=>{
     rest.get('https://api.mercadolibre.com/items/'+id+'/description').on('complete', function(result){
-      //console.log(result);
       resolve(result)
     });
   });
@@ -25,7 +22,6 @@ self.getDescription = function (id) {
 self.getBreadcrumb = function (id) {
   const api = new Promise ((resolve, reject)=>{
     rest.get('https://api.mercadolibre.com/categories/'+id).on('complete', function(result){
-      //console.log(result);
       resolve(result)
     });
   });

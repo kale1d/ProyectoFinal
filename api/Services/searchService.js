@@ -5,7 +5,6 @@ let rest = require('restler');
 self.getList =  function (name){
   const api = new Promise ((resolve, reject)=>{
     rest.get('https://api.mercadolibre.com/sites/MLA/search?q='+name+'&limit=4').on('complete', function(result){
-      //console.log(result);
       resolve(result)
     });
   })

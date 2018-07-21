@@ -2,7 +2,6 @@ const productModel = require('../Models/product');
 
 class Query {
   constructor(info) {
-    //console.log('holo')
     this.categories = []
     let filter = info.filters
     let maxObj = {
@@ -20,26 +19,12 @@ class Query {
           }
         }
       })
-
-      // info.available_filters.map((result) => {
-      //   return result.values.map ((val)=> {
-      //     if (val.results > maxObj.results) {
-      //       maxObj = {
-      //         name: val.name,
-      //         results: val.results
-      //       }
-      //     }
-      //   })
-      // })
-      // console.log(maxObj.name, 'holaaa')
       this.categories.push(maxObj.name);
-      console.log(this.categories);
     }
     else {
       if(info.filters.length !== 0){
         info.filters.map((result)=>{
           return result.values.map((val)=>{
-            console.log(val)
             if(val.path_from_root) {
               return val.path_from_root.map((cat)=>{
                 this.categories.push(cat.name);
@@ -60,14 +45,13 @@ class Query {
   }
 
   getQuery() {
-    // console.log(new productModel().getAuthor());
     return(
       {
-      author: new productModel().getAuthor(),
-      categories: this.categories,
-      items: this.items,
-    })
+        author: new productModel().getAuthor(),
+        categories: this.categories,
+        items: this.items,
+      })
+    }
   }
-}
 
-module.exports = Query;
+  module.exports = Query;
