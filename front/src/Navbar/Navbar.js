@@ -42,7 +42,7 @@ class Navbar extends Component {
   }
 
   render() {
-    let url ='/items?search=' + this.state.search
+    const url ='/items?search=' + this.state.search
     return (
       <nav className="nav--section">
         <div className = "nav--wrapper">

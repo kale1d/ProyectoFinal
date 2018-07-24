@@ -28,16 +28,28 @@ class List extends Component {
   async fetchData(search)   {
     let query = queryString.parse(search)
     const data = await fetch('http://localhost:3001/api/items?search='+query.search)
-    const JSONdata = await data.json();
-    this.setState({
-      data: JSONdata,
-    })
+    try {
+      if(data) {
+      const JSONdata = await data.json();
+      this.setState({
+        data: JSONdata,
+      })
+      }
+    }catch(error) {
+      this.setState({
+        data: {},
+      })
+    }
+
   }
 
   render(){
     return(
       <div>
         <Navbar />
+          {Object.keys(this.state.data).length == 0 &&
+           <div>no hay infoooo</div>
+          }
         {Object.keys(this.state.data).length > 0 &&
           <section className="list--section">
             <div className="list--wrapper">

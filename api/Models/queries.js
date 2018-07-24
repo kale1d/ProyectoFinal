@@ -11,15 +11,21 @@ class Query {
 
     if (filter.length == 0) {
       const results = info.available_filters[0];
-      results.values.map((val)=>{
-        if(val.results>maxObj.results) {
-          maxObj = {
-            name: val.name,
-            results: val.results,
+      if (results === undefined) {
+        maxObj.name = '';
+        this.categories.push(maxObj.name);
+      }
+      else {
+        results.values.map((val)=>{
+          if(val.results>maxObj.results) {
+            maxObj = {
+              name: val.name,
+              results: val.results,
+            }
           }
-        }
-      })
-      this.categories.push(maxObj.name);
+        })
+        this.categories.push(maxObj.name);
+      }
     }
     else {
       if(info.filters.length !== 0){
