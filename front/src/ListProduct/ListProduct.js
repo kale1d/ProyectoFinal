@@ -3,9 +3,6 @@ import './ListProduct.css';
 import { Link } from "react-router-dom";
 
 class ListProduct extends Component {
-  constructor(props) {
-    super(props)
-  }
   render(){
     return(
       <div>

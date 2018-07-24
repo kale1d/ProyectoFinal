@@ -47,7 +47,7 @@ class List extends Component {
     return(
       <div>
         <Navbar />
-          {Object.keys(this.state.data).length == 0 &&
+          {Object.keys(this.state.data).length === 0 &&
            <div>no hay infoooo</div>
           }
         {Object.keys(this.state.data).length > 0 &&
